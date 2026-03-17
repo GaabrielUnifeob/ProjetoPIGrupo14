@@ -1,198 +1,228 @@
- DOCUMENTAÇÃO DE CASOS DE USO – Sabor do Campo
- 
-1. Caso de Uso: Realizar Login
+# Documentação de Casos de Uso – Sabor do Campo
 
-Ator: Usuário (Funcionário/Gestor)
-Descrição: Permite que o usuário acesse o sistema de forma segura.
-Pré-condições: Usuário deve estar previamente cadastrado.
-Pós-condições: Usuário autenticado e com acesso ao sistema.
+---
 
-Fluxo Principal:
+## 1. Introdução
 
-O usuário abre o aplicativo
+Este documento descreve os casos de uso do aplicativo mobile desenvolvido para a empresa **Sabor do Campo**, com foco no controle de estoque de produtos hortifrúti, como couve e milho.
 
-Informa login e senha
+O objetivo é detalhar as interações entre os usuários e o sistema, garantindo clareza no funcionamento da aplicação.
 
-O sistema valida as credenciais
+---
 
-O sistema permite o acesso
+## 2. Atores do Sistema
 
-Fluxos Alternativos:
+| Ator | Descrição |
+|------|----------|
+| Usuário | Funcionário ou gestor responsável pelo controle de estoque, pedidos e operações |
 
-2a. Senha incorreta → sistema exibe mensagem de erro
+---
 
-2b. Usuário não encontrado → acesso negado
+## 3. Lista de Casos de Uso
 
-3a. Falha de conexão → sistema informa erro
+- Realizar Login  
+- Cadastrar Produto  
+- Registrar Entrada de Estoque  
+- Registrar Saída (Venda)  
+- Consultar Estoque  
+- Cadastrar Pedido  
+- Gerenciar Entregas  
+- Registrar Pagamento  
+- Visualizar Dashboard  
 
-2. Caso de Uso: Cadastrar Produto
+---
 
-Ator: Usuário
-Descrição: Permite cadastrar novos produtos (couve/milho).
-Pré-condições: Usuário autenticado
-Pós-condições: Produto registrado no sistema
+## 4. Descrição dos Casos de Uso
 
-Fluxo Principal:
+---
 
-Usuário acessa a tela de cadastro
+### 4.1 Realizar Login
 
-Informa nome, tipo e quantidade inicial
+**Ator:** Usuário  
+**Descrição:** Permite acesso ao sistema de forma segura  
+**Pré-condições:** Usuário cadastrado  
+**Pós-condições:** Usuário autenticado  
 
-Confirma cadastro
+**Fluxo Principal:**
+1. Usuário abre o aplicativo  
+2. Informa login e senha  
+3. Sistema valida credenciais  
+4. Acesso liberado  
 
-Sistema salva o produto
+**Fluxos Alternativos:**
+- Senha incorreta → exibir erro  
+- Usuário não encontrado → acesso negado  
+- Falha de conexão → informar usuário  
 
-Fluxos Alternativos:
+---
 
-2a. Campos vazios → sistema solicita preenchimento
+### 4.2 Cadastrar Produto
 
-2b. Produto já cadastrado → sistema exibe alerta
+**Ator:** Usuário  
+**Descrição:** Permite cadastrar produtos (couve/milho)  
+**Pré-condições:** Usuário autenticado  
+**Pós-condições:** Produto registrado  
 
-3. Caso de Uso: Registrar Entrada de Estoque
+**Fluxo Principal:**
+1. Acessa tela de cadastro  
+2. Informa nome, tipo e quantidade  
+3. Confirma cadastro  
+4. Sistema salva produto  
 
-Ator: Usuário
-Descrição: Permite adicionar produtos ao estoque.
-Pré-condições: Produto deve estar cadastrado
-Pós-condições: Estoque atualizado
+**Fluxos Alternativos:**
+- Campos vazios → solicitar preenchimento  
+- Produto duplicado → exibir alerta  
 
-Fluxo Principal:
+---
 
-Usuário seleciona produto
+### 4.3 Registrar Entrada de Estoque
 
-Informa quantidade de entrada
+**Ator:** Usuário  
+**Descrição:** Adiciona produtos ao estoque  
+**Pré-condições:** Produto cadastrado  
+**Pós-condições:** Estoque atualizado  
 
-Confirma operação
+**Fluxo Principal:**
+1. Seleciona produto  
+2. Informa quantidade  
+3. Confirma operação  
+4. Sistema atualiza estoque  
 
-Sistema atualiza o estoque
+**Fluxos Alternativos:**
+- Quantidade inválida → bloquear operação  
+- Produto inexistente → erro  
 
-Fluxos Alternativos:
+---
 
-2a. Quantidade inválida → operação bloqueada
+### 4.4 Registrar Saída (Venda)
 
-1a. Produto não encontrado → erro exibido
+**Ator:** Usuário  
+**Descrição:** Registra venda de produtos  
+**Pré-condições:** Produto disponível  
+**Pós-condições:** Estoque reduzido  
 
-4. Caso de Uso: Registrar Saída (Venda)
+**Fluxo Principal:**
+1. Seleciona produto  
+2. Informa quantidade  
+3. Confirma  
+4. Sistema atualiza estoque  
 
-Ator: Usuário
-Descrição: Permite registrar a venda de produtos.
-Pré-condições: Produto disponível em estoque
-Pós-condições: Estoque reduzido
+**Fluxos Alternativos:**
+- Estoque insuficiente → operação negada  
+- Produto não encontrado → erro  
 
-Fluxo Principal:
+---
 
-Usuário seleciona produto
+### 4.5 Consultar Estoque
 
-Informa quantidade vendida
+**Ator:** Usuário  
+**Descrição:** Exibe produtos e quantidades  
+**Pré-condições:** Usuário autenticado  
 
-Confirma operação
+**Fluxo Principal:**
+1. Acessa tela de estoque  
+2. Sistema exibe lista  
 
-Sistema atualiza o estoque
+**Fluxos Alternativos:**
+- Nenhum produto → exibir mensagem  
 
-Fluxos Alternativos:
+---
 
-2a. Quantidade maior que o estoque → operação negada
+### 4.6 Cadastrar Pedido
 
-1a. Produto inexistente → erro exibido
+**Ator:** Usuário  
+**Descrição:** Registra pedidos  
+**Pré-condições:** Produtos cadastrados  
+**Pós-condições:** Pedido salvo  
 
-5. Caso de Uso: Consultar Estoque
+**Fluxo Principal:**
+1. Inicia pedido  
+2. Seleciona produtos  
+3. Confirma  
+4. Sistema registra  
 
-Ator: Usuário
-Descrição: Permite visualizar o estoque atual.
-Pré-condições: Usuário autenticado
-Pós-condições: Nenhuma
+**Fluxos Alternativos:**
+- Produto sem estoque → aviso  
+- Dados incompletos → bloquear  
 
-Fluxo Principal:
+---
 
-Usuário acessa a tela de estoque
+### 4.7 Gerenciar Entregas
 
-Sistema exibe lista de produtos e quantidades
+**Ator:** Usuário  
+**Descrição:** Atualiza status de entrega  
+**Pré-condições:** Pedido existente  
 
-Fluxos Alternativos:
+**Fluxo Principal:**
+1. Seleciona pedido  
+2. Atualiza status  
+3. Sistema salva  
 
-2a. Nenhum produto cadastrado → sistema informa
+**Fluxos Alternativos:**
+- Pedido não encontrado → erro  
 
-6. Caso de Uso: Cadastrar Pedido
+---
 
-Ator: Usuário
-Descrição: Permite registrar pedidos de clientes.
-Pré-condições: Produtos cadastrados
-Pós-condições: Pedido registrado
+### 4.8 Registrar Pagamento
 
-Fluxo Principal:
+**Ator:** Usuário  
+**Descrição:** Registra pagamento  
+**Pré-condições:** Pedido existente  
 
-Usuário inicia novo pedido
+**Fluxo Principal:**
+1. Seleciona pedido  
+2. Informa pagamento  
+3. Confirma  
+4. Sistema salva  
 
-Seleciona produtos e quantidades
+**Fluxos Alternativos:**
+- Pedido inexistente → erro  
 
-Confirma pedido
+---
 
-Sistema salva o pedido
+### 4.9 Visualizar Dashboard
 
-Fluxos Alternativos:
+**Ator:** Usuário  
+**Descrição:** Exibe indicadores  
 
-2a. Produto sem estoque → aviso exibido
+**Fluxo Principal:**
+1. Acessa dashboard  
+2. Sistema mostra dados  
 
-3a. Dados incompletos → sistema impede cadastro
+**Fluxos Alternativos:**
+- Sem dados → exibir mensagem  
 
-7. Caso de Uso: Gerenciar Entregas
+---
 
-Ator: Usuário
-Descrição: Permite acompanhar e atualizar entregas.
-Pré-condições: Pedido existente
-Pós-condições: Status atualizado
+## 5. Relação entre Casos de Uso e MVP
 
-Fluxo Principal:
+### Funcionalidades do MVP
 
-Usuário seleciona pedido
+| Funcionalidade | Caso de Uso | Descrição |
+|---------------|------------|----------|
+| Login | Realizar Login | Acesso ao sistema |
+| Cadastro de produtos | Cadastrar Produto | Registro de produtos |
+| Entrada de estoque | Registrar Entrada de Estoque | Adição de produtos |
+| Saída de estoque | Registrar Saída (Venda) | Baixa no estoque |
+| Consulta de estoque | Consultar Estoque | Visualização do estoque |
 
-Atualiza status (pendente, em entrega, entregue)
+---
 
-Sistema salva atualização
+### Funcionalidades Futuras
 
-Fluxos Alternativos:
+| Funcionalidade | Caso de Uso | Justificativa |
+|---------------|------------|--------------|
+| Pedidos | Cadastrar Pedido | Evolução do sistema |
+| Entregas | Gerenciar Entregas | Depende de pedidos |
+| Pagamentos | Registrar Pagamento | Complemento |
+| Dashboard | Visualizar Dashboard | Análise gerencial |
 
-1a. Pedido não encontrado → erro exibido
+---
 
-8. Caso de Uso: Registrar Pagamento
+## 6. Conclusão
 
-Ator: Usuário
-Descrição: Permite registrar pagamentos dos pedidos.
-Pré-condições: Pedido existente
-Pós-condições: Pagamento registrado
+Os casos de uso apresentados representam as principais funcionalidades do sistema Sabor do Campo.
 
-Fluxo Principal:
+O MVP foi definido com foco no controle de estoque, garantindo uma entrega inicial eficiente. As demais funcionalidades serão implementadas em fases futuras, permitindo evolução contínua do sistema.
 
-Usuário seleciona pedido
-
-Informa valor e status do pagamento
-
-Confirma registro
-
-Sistema salva pagamento
-
-Fluxos Alternativos:
-
-1a. Pedido inexistente → erro exibido
-
-9. Caso de Uso: Visualizar Dashboard
-
-Ator: Usuário
-Descrição: Permite visualizar indicadores do sistema.
-Pré-condições: Dados cadastrados
-Pós-condições: Nenhuma
-
-Fluxo Principal:
-
-Usuário acessa o dashboard
-
-Sistema exibe:
-
-Total de vendas
-
-Produtos em estoque
-
-Movimentações
-
-Fluxos Alternativos:
-
-2a. Sem dados → sistema exibe mensagem informativa
+---
