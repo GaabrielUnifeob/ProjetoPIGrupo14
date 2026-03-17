@@ -196,13 +196,3 @@ Movimentações
 Fluxos Alternativos:
 
 2a. Sem dados → sistema exibe mensagem informativa
-
-Observação Final (importante pro professor)
-
-O sistema foi dividido em três níveis de entrega:
-
-MVP: Login, produtos, entrada, saída e consulta de estoque
-
-Intermediário: Pedidos e entregas
-
-Avançado: Pagamentos e dashboard
